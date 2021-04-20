@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div> 
+    <h3>Songs</h3>
+    {%for song in songs%}
+    <div class = "song_name">
+        <a href = "{%url 'song_details' song.id%}"
+        <h3>Song Name : {{song.name_of_the_song|capfirst}}</h3>
+        </a>
+        <p> Duration (sec): {{song.duration_in_number_of_seconds}}</p>
+        <p class = "hidden">{{song.uploaded_time}}</p>
+    </div>
+    {%endfor%}
+</div>
+
+<div>
+    <h3>Audiobooks</h3> 
+    {%for audiobook in audiobooks%}
+    <div class = "audiobook_name">
+        <a href = "{%url 'audiobook_details' audiobook.id%}"
+        <h3>Audiobook Name : {{audiobook.title|capfirst}}</h3>
+        </a>
+        <p> Duration (sec): {{audiobook.duration_in_number_of_seconds}}</p>
+        <p> Narrator : {{audiobook.narrator}}</p>
+        <p> Author : {{audiobook.author}}</p>
+        <p class = "hidden">{{audiobook.uploaded_time}}</p>
+    </div>
+    {%endfor%}
+</div>
+
+<div>
+    <h3>Podcasts</h3>
+    {%for podcast in podcasts%}
+    <div class = "podcast_name">
+        <a href = "{%url 'podcast_details' podcast.id%}"
+        <h3>podcast Name : {{podcast.name_of_the_podcast|capfirst}}</h3>
+        </a>
+        <p> Duration(sec) : {{podcast.duration_in_number_of_seconds}}</p>
+        <p> Host : {{podcast.host}}</p>
+        <p> Participants : {{podcast.participants}}</p>
+        <p class = "hidden">{{podcast.uploaded_time}}</p>
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}

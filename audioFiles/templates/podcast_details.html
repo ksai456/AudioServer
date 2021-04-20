@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div> 
+    <p> Audio Type : {{podcast.audiofiletype | capfirst}} </p> 
+    <p> Podcast Name : {{podcast.name_of_the_podcast|capfirst}}</p>
+    <p> Duration(sec) : {{podcast.duration_in_number_of_seconds}}</p>
+    <p> Host : {{podcast.host}}</p>
+    <p> Participants : {{podcast.participants}}</p>
+    <p> Uploaded time : {{podcast.uploaded_time}}</p>
+</div>
+{% endblock %}

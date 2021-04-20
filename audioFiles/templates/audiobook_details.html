@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div> 
+    <p> Audio Type : {{audiobook.audiofiletype | capfirst}} </p> 
+    <p> Audiobook Name : {{audiobook.title|capfirst}}</p>
+    <p> Duration (sec): {{audiobook.duration_in_number_of_seconds}}</p>
+    <p> Narrator : {{audiobook.narrator}}</p>
+    <p> Author : {{audiobook.author}}</p>
+    <p> Uploaded time : {{audiobook.uploaded_time}}</p>
+</div>
+{% endblock %}

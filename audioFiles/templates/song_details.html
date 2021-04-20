@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <p> Audio Type : {{song.audiofiletype | capfirst}} </p> 
+    <p>Song Name : {{song.name_of_the_song|capfirst}}</p>
+    <p> Duration (sec) : {{song.duration_in_number_of_seconds}}</p>
+    <p>Uploaded time : {{song.uploaded_time}}</p>
+</div>
+{% endblock %}
