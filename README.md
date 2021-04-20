@@ -4,20 +4,19 @@ This is my first Python-Django project
 This is a Django Web API that simulates the behavior of an audio file server while using a SQL database(sqlite used).
 
 Tools Needed :
-
 python
 pip install django
 pip install djangorestframework
 
 
 Usage :
-
 Download git audioServer repository  to local directory 
 
 1.go to audioServer Folder
 2.To run run django server run the command
   - python manage.py runserver
-  
+
+
 Go to web browser
 Urls:
 http://localhost:port/ - Home page --> Displays all songs, audiobooks, podcasts in HTML template format
@@ -48,7 +47,6 @@ audiobook json format:
 }
 
 podcast format:
-
 {
     "audiofiletype": "Podcast",
     "duration_in_number_of_seconds": 90000,
@@ -57,6 +55,8 @@ podcast format:
     "host": "[]",
     "participants": "[]"
 }
+
+
 
 Eg for creating a song :
 http://127.0.0.1:8000/audioFiles/api/create/song
@@ -68,9 +68,15 @@ http://127.0.0.1:8000/audioFiles/api/create/song
     "uploaded_time": "2021-04-20T12:27:06Z"
 }
 
+
+
+
 http://localhost:port/audioFiles/api/view/<str:audioFileType> --> audioFileType can be any one of {song, audiobook, podcast}
 This api let's you view all songs/audiobook/podcast stored in DB.
 Eg: http://127.0.0.1:8000/audioFiles/api/view/song --> This api will let you view all songs in json format
+
+
+
 
 http://localhost:port/audioFiles/api/view/<str:audioFileType>/<int:id> --> audioFileType can be any one of {song, audiobook, podcast} and id=1,2,3...
 This api let you to view specific audiofile type of given id
@@ -83,6 +89,9 @@ Eg: http://127.0.0.1:8000/audioFiles/api/view/song/1  --> retrieve song details 
     "uploaded_time": "2021-04-20T12:27:06Z"
 }
 
+
+
+
 http://localhost:port/audioFiles/api/update/<str:audioFileType>/<int:id> --> audioFileType can be any one of {song, audiobook, podcast} and id=1,2,3...
 This api let you to update specific audiofile type of given id
 Eg : http://127.0.0.1:8000/audioFiles/api/update/song/1
@@ -93,6 +102,8 @@ Eg : http://127.0.0.1:8000/audioFiles/api/update/song/1
     "duration_in_number_of_seconds": 360,
     "uploaded_time": "2021-04-20T12:27:06Z"
 }
+
+
 
 http://localhost:port/audioFiles/api/delete/<str:audioFileType>/<int:id> --> audioFileType can be any one of {song, audiobook, podcast} and id=1,2,3...
 This api let you to delete specific audiofile type of given id
